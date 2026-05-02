@@ -1,0 +1,7 @@
+envs/
+preds/
+videos
+videos/
+__pycache__/
+*.py[cod]
+.DS_Store
