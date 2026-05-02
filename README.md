@@ -49,7 +49,15 @@ Pipeline scripts resolve storage via the environment variable:
 
 If unset, a default relative path defined in `configs/config.py` is used; **set `TOC_BENCH_ROOT` explicitly** on shared clusters to avoid writing under the repository tree.
 
-### 2.3 Model weights & Hugging Face cache
+### 2.3 Released benchmark videos (download)
+
+Evaluation and any step that reads raw clips expect a local **video root** (see §6.1, `--videos-root` in `eval_runner.py`). For the **released TOC-Bench media**, download from Hugging Face Datasets:
+
+**[anonymous-video-benchmark/toc_bench](https://huggingface.co/datasets/anonymous-video-benchmark/toc_bench)**
+
+Use the `datasets` library, `huggingface-cli download`, or the dataset’s **Files** tab; then point `<VIDEO_ROOT>` / your symlink `videos/` at the directory layout that matches your `video_id` paths (or use a `--video-registry` JSON if paths are non-standard).
+
+### 2.4 Model weights & Hugging Face cache
 
 Set a **single** Hugging Face home (example placeholder):
 
@@ -59,7 +67,7 @@ export HF_HOME=<HF_CACHE_ROOT>
 
 Avoid mixing legacy variables (e.g., `TRANSFORMERS_CACHE` pointing elsewhere) with `HF_HOME`, or you may observe redundant downloads. The evaluation entrypoint normalizes some legacy variables when invoked; keeping shell configuration consistent is still best practice.
 
-### 2.4 API keys (evaluation only)
+### 2.5 API keys (evaluation only)
 
 Closed-weight or hosted models expect credentials via **environment variables** named in each model entry inside `eval_runner.py` (e.g., `<OPENAI_API_KEY>`, `<ANTHROPIC_API_KEY>`, `<GOOGLE_API_KEY>`, or provider-specific keys). Do not commit secrets; inject them at runtime.
 
@@ -174,7 +182,7 @@ The evaluation harness docstring refers to this repaired file as the canonical `
 ### 6.1 Inputs
 
 - **`<REPAIRED_BENCHMARK_JSON>`** — items with `qa_id`, `format`, `correct_answer` / `correct_order`, `video_id`, and metadata.
-- **`<VIDEO_ROOT>`** — directory tree or symlink layout resolvable to actual media files.
+- **`<VIDEO_ROOT>`** — directory tree or symlink layout resolvable to actual media files. **Released benchmark videos** are distributed on Hugging Face: [anonymous-video-benchmark/toc_bench](https://huggingface.co/datasets/anonymous-video-benchmark/toc_bench) (see §2.3).
 - **Optional `<VIDEO_REGISTRY_JSON>`** — maps `video_id` to absolute paths (recommended for frame-folder sources).
 
 ### 6.2 Running inference (`eval_runner.py`)
