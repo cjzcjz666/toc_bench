@@ -2,7 +2,7 @@
 """
 TOC-Bench Data Repair
 =====================
-Two fixes for toc_bench_clean.json:
+Auditable answer-label and ordering fixes for toc_bench_clean.json:
 
   A1. correct_answer='d' (lowercase) on 1 item → uppercase to 'D'
   A2. SP imbalance: 121 A vs 66 B (always-A baseline = 64.7%)
@@ -10,6 +10,10 @@ Two fixes for toc_bench_clean.json:
         Flipping is purely a label swap (statement_A ↔ statement_B,
         correct_answer toggled). Question text and option semantics are
         identical — only display order changes.
+  A2b. ReID answer-position balance: after the aggregate SP repair, swap
+       statement positions within ReID until A/B differs by at most one.
+       For the released 23-item subset this yields 11/12. This is also a
+       display-order change and preserves QA semantics.
 
 Output: toc_bench_clean_v2.json (same schema, with metadata.repair_log
 added per item that was modified).
@@ -89,6 +93,63 @@ def rebalance_sp_answers(items, rng):
     n_a2 = sum(1 for it in sp_items if it["correct_answer"] == "A")
     n_b2 = sum(1 for it in sp_items if it["correct_answer"] == "B")
     return flipped, n_a, n_b, n_a2, n_b2
+
+
+def rebalance_reid_answers(items):
+    """Balance ReID answer positions, yielding A/B=11/12 for the released set.
+
+    The operation swaps statement_A and statement_B together with the keyed
+    answer. It changes only display order, not the proposition judged by the
+    item. Selection is stable by qa_id so the repair is reproducible.
+    """
+    reid_items = [
+        it for it in items
+        if it.get("format") == "sp"
+        and it.get("metadata", {}).get("dim") == "reappear_identity"
+    ]
+    if not reid_items:
+        raise ValueError("No ReID items found")
+
+    target_a = len(reid_items) // 2
+    n_a = sum(1 for it in reid_items if it.get("correct_answer") == "A")
+    n_b = sum(1 for it in reid_items if it.get("correct_answer") == "B")
+    before = {"A": n_a, "B": n_b}
+
+    if n_a < target_a:
+        candidates = sorted(
+            (it for it in reid_items if it.get("correct_answer") == "B"),
+            key=lambda it: it["qa_id"],
+        )
+        source, target, needed = "B", "A", target_a - n_a
+    elif n_a > target_a:
+        candidates = sorted(
+            (it for it in reid_items if it.get("correct_answer") == "A"),
+            key=lambda it: it["qa_id"],
+        )
+        source, target, needed = "A", "B", n_a - target_a
+    else:
+        return 0, before, before
+
+    flipped = 0
+    for it in candidates[:needed]:
+        it["statement_A"], it["statement_B"] = (
+            it["statement_B"],
+            it["statement_A"],
+        )
+        it["correct_answer"] = target
+        it.setdefault("metadata", {}).setdefault("repair_log", []).append(
+            f"A2b: ReID statement positions swapped ({source}→{target})"
+        )
+        flipped += 1
+
+    after = {
+        "A": sum(1 for it in reid_items if it.get("correct_answer") == "A"),
+        "B": sum(1 for it in reid_items if it.get("correct_answer") == "B"),
+    }
+    expected = {"A": target_a, "B": len(reid_items) - target_a}
+    if after != expected:
+        raise RuntimeError(f"Unexpected ReID distribution after repair: {after}")
+    return flipped, before, after
 
 
 def rebalance_mcq4_answers(items, rng):
@@ -252,6 +313,19 @@ def main():
           f"(always-A baseline = {after_a/(after_a+after_b)*100:.1f}%)")
     print(f"     Items flipped: {n_flipped}")
 
+    # === Fix A2b ===
+    n_reid_flipped, reid_before, reid_after = rebalance_reid_answers(items)
+    print(f"[A2b] ReID A/B before: {reid_before['A']}/{reid_before['B']}")
+    print(f"      ReID A/B after:  {reid_after['A']}/{reid_after['B']}")
+    print(f"      Items flipped: {n_reid_flipped}")
+    final_sp_counts = Counter(
+        it["correct_answer"] for it in items if it.get("format") == "sp"
+    )
+    print(
+        f"      Final aggregate SP A/B: "
+        f"{final_sp_counts['A']}/{final_sp_counts['B']}"
+    )
+
     # === Fix A3 ===
     items, dropped, kept_invalid = drop_invalid_ordering(items)
     data["items"] = items
@@ -283,6 +357,13 @@ def main():
         "a2_sp_flipped": n_flipped,
         "a2_sp_before": {"A": before_a, "B": before_b},
         "a2_sp_after": {"A": after_a, "B": after_b},
+        "a2b_reid_flipped": n_reid_flipped,
+        "a2b_reid_before": reid_before,
+        "a2b_reid_after": reid_after,
+        "final_sp_answer_positions": {
+            "A": final_sp_counts["A"],
+            "B": final_sp_counts["B"],
+        },
         "a3_ordering_dropped": len(dropped),
         "a3_dropped_qa_ids": [d["qa_id"] for d in dropped],
         "a3_kept_invalid_qa_ids": [d["qa_id"] for d in kept_invalid],

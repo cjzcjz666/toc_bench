@@ -16,6 +16,8 @@ All concrete filesystem locations below are written as **placeholders**; substit
 | `answer_extractor.py` | Deterministic post-processing: maps free-form model text to structured answers per format. |
 | `compute_metrics.py` | Aggregates accuracy, tier-weighted metrics, hallucination-related breakdowns, and **invalid extraction rate**. |
 | `data_repair.py` | Small, auditable fixes applied to an exported clean benchmark before scoring (produces a versioned JSON used by `eval_runner.py`). |
+| `analysis/bootstrap_ci/` | Complete per-cell sample sizes and QA-item bootstrap confidence intervals for the reported model results. |
+| `third_party_licenses/CHARADES_LICENSE.txt` | Original Charades license notice retained with the artifact. |
 
 Auxiliary scripts under `scripts/` (e.g., diagnostics, duplicate-label repair, referring-expression helpers) support QA quality control and analysis; they are optional for the main linear pipeline.
 
@@ -83,7 +85,7 @@ Closed-weight or hosted models expect credentials via **environment variables** 
 4. **`SAM3_CONFIG` / `SAM3_POSTPROC_CONFIG`** — tracker behavior and post-hoc instance repair / confidence scoring.
 5. **`EVENT_CONFIG` / `EVENT_STATS_CONFIG`** — event taxonomy and statistics feeding downstream QA preconditions.
 6. **`FILTER_CONFIG`** — minimum structural richness for a clip to proceed.
-7. **`DIMENSIONS` / `FORMATS` / bucket definitions** — the public **11-dimension**, **5-format** schema (tiers, hallucination sensitivity, etc.).
+7. **`DIMENSIONS` / `FORMATS` / bucket definitions** — 11 candidate dimension builders and four conceptual task formats. The released benchmark retains 10 diagnostic dimensions; `occluder_identity` is construction-only. Event ordering is one task format with separate three- and four-event serialization labels in the released JSON.
 8. **Filtering, skeleton caps, surface-realization locks** — additional dicts (see file body) consumed by Steps 3–5.
 
 Tuning the benchmark **without** editing step logic is usually done by editing this file and re-running the affected downstream stages.
@@ -223,6 +225,10 @@ python compute_metrics.py \
 
 Metrics include overall accuracy, macro-by-dimension, tier-weighted accuracy, hallucination-bucket accuracies, and **invalid extraction rate** (`extracted_answer is None` among scored items).
 
+### 6.4 Bootstrap confidence intervals
+
+The `analysis/bootstrap_ci/` directory reports two-sided 95% percentile intervals from 20,000 QA-item bootstrap resamples with fixed seed 20260724. It contains complete results for all 23 evaluated models across all 10 released dimensions and five serialization labels, plus overall and paired model-difference tables. Use the paired table for direct model comparisons rather than treating marginal-CI overlap as a significance test.
+
 ---
 
 ## 7. Reproducibility checklist
@@ -242,4 +248,4 @@ If you use this benchmark or codebase, please cite the **TOC-Bench** paper (bib 
 
 ## 9. License & third-party data
 
-Individual sources in `DATA_SOURCES` carry their own licenses and access procedures. Users are responsible for complying with each provider’s terms when downloading or redistributing video material.
+Individual sources in `DATA_SOURCES` carry their own licenses and access procedures. In particular, the official Charades license permits general use by academic, non-profit, and government-sponsored researchers and permits evaluation use; commercial use requires separate permission from the Allen Institute for AI. Third-party media remains governed by its original source terms and is not relicensed by this code repository.

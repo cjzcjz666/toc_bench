@@ -4,8 +4,8 @@ TOC-Bench Configuration v2
 All paths, parameters, dim/format/bucket definitions, and data source specs.
 
 Changes from v1:
-  - NEW: 10 dims (was 16) with O/T/C tier classification
-  - NEW: 5 formats (added Numerical)
+  - NEW: 11 candidate dimension definitions; 10 retained in the released benchmark
+  - NEW: 4 conceptual task formats (added Numerical; ordering has 3/4-event serializations)
   - NEW: 3-bucket temporal / duration / spatial-direction systems
   - NEW: SAM3 post-processing config (方案 C: ID repair + instance_confidence)
   - NEW: Per-dim precondition and answer-balancing rules
@@ -291,7 +291,8 @@ FILTER_CONFIG = {
 # 7. QA Dimensions — v2 schema (REPLACES old hard_negative_types etc.)
 # =============================================================================
 #
-# 11 dimensions organized into tiers by what they test:
+# 11 candidate dimension definitions organized into tiers by what they test.
+# The released benchmark retains 10; occluder_identity is construction-only.
 #
 #   Tier 1 (O+T):      baseline temporal reasoning about a single object
 #   Tier 2 (O+T+C):    requires tracking the same object identity over time
@@ -301,7 +302,7 @@ FILTER_CONFIG = {
 #
 # Each dim declares:
 #   tier           — "tier1", "tier2", "tier3"
-#   format         — which of the 5 formats to use
+#   format         — which of the 4 conceptual task formats to use
 #   target_ratio   — target fraction of total QA (roughly 1/3 per tier)
 #   c_critical     — if True, requires instance_confidence >= 0.7
 #   notes          — design rationale for future reference

@@ -1,6 +1,6 @@
 {
   "benchmark": "TOC-Bench",
-  "version": "merged-answer+repaired",
+  "version": "merged-answer+repaired+reid-balanced",
   "subset": "answer",
   "total_items": 2323,
   "format_counts": {
@@ -100,7 +100,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -825,7 +825,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -1242,7 +1242,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -1301,7 +1301,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -2339,7 +2339,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -2560,7 +2560,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -2595,7 +2595,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -2922,7 +2922,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -3659,15 +3659,18 @@
       "video_id": "charades_ZC8L5",
       "format": "sp",
       "question": "After the plastic chair comes back into view, is it the same chair as before, or a different one?",
-      "statement_A": "the chair that comes back is a different one",
-      "statement_B": "the chair that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the chair that comes back is the same one as before",
+      "statement_B": "the chair that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "plastic chair",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -4266,7 +4269,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -4499,7 +4502,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -4902,7 +4905,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -5706,7 +5709,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -7329,7 +7332,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -9706,7 +9709,7 @@
         "hallucination": "variant_b",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -9849,7 +9852,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -10138,7 +10141,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -10971,15 +10974,18 @@
       "video_id": "perception_test_video_7414",
       "format": "sp",
       "question": "After brown medicine bottle comes back into view, is it the same bottle as before, or a different one?",
-      "statement_A": "the bottle that comes back is a different one",
-      "statement_B": "the bottle that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the bottle that comes back is the same one as before",
+      "statement_B": "the bottle that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "brown medicine bottle",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -11852,7 +11858,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -12090,7 +12096,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194B swap"
+          "A4: MCQ_4 A↔B swap"
         ]
       }
     },
@@ -12451,7 +12457,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -12726,15 +12732,18 @@
       "video_id": "charades_W4W97",
       "format": "sp",
       "question": "After the green cup comes back into view, is it the same cup as before, or a different one?",
-      "statement_A": "the cup that comes back is a different one",
-      "statement_B": "the cup that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the cup that comes back is the same one as before",
+      "statement_B": "the cup that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "green cup",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -13242,15 +13251,18 @@
       "video_id": "charades_J8KPE",
       "format": "sp",
       "question": "After the open cabinet door comes back into view, is it the same door as before, or a different one?",
-      "statement_A": "the door that comes back is a different one",
-      "statement_B": "the door that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the door that comes back is the same one as before",
+      "statement_B": "the door that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "open cabinet door",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -14201,7 +14213,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -14480,7 +14492,7 @@
         "hallucination": "variant_a",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -15156,7 +15168,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -15942,7 +15954,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -16701,15 +16713,18 @@
       "video_id": "charades_ZO3EG",
       "format": "sp",
       "question": "After black jacket comes back into view, is it the same jacket as before, or a different one?",
-      "statement_A": "the jacket that comes back is a different one",
-      "statement_B": "the jacket that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the jacket that comes back is the same one as before",
+      "statement_B": "the jacket that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "black jacket",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -16779,7 +16794,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -17069,7 +17084,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -17158,7 +17173,7 @@
         "hallucination": "variant_a",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -17820,7 +17835,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -18252,7 +18267,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -18541,7 +18556,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -18942,7 +18957,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -19465,7 +19480,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -20862,7 +20877,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -22615,7 +22630,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -23014,7 +23029,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -23237,7 +23252,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -23256,7 +23271,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -23456,7 +23471,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -23831,7 +23846,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -23924,7 +23939,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -24233,7 +24248,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -25202,7 +25217,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -25795,7 +25810,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -26959,7 +26974,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -27088,7 +27103,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -27195,7 +27210,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -27312,15 +27327,18 @@
       "video_id": "charades_TW2F4",
       "format": "sp",
       "question": "After black jacket comes back into view, is it the same jacket as before, or a different one?",
-      "statement_A": "the jacket that comes back is a different one",
-      "statement_B": "the jacket that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the jacket that comes back is the same one as before",
+      "statement_B": "the jacket that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "black jacket",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -27392,7 +27410,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -27701,7 +27719,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -27806,7 +27824,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -27976,15 +27994,18 @@
       "video_id": "perception_test_video_9369",
       "format": "sp",
       "question": "After the red lid comes back into view, is it the same lid as before, or a different one?",
-      "statement_A": "the lid that comes back is a different one",
-      "statement_B": "the lid that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the lid that comes back is the same one as before",
+      "statement_B": "the lid that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "red lid",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -28163,7 +28184,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -28452,7 +28473,7 @@
         "hallucination": "variant_b",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194B swap"
+          "A4: MCQ_4 A↔B swap"
         ]
       }
     },
@@ -28601,9 +28622,9 @@
       "video_id": "charades_GL7E6",
       "format": "sp",
       "question": "After the red cup comes back into view, is it the same cup as before, or a different one?",
-      "statement_A": "the cup that comes back is a different one",
-      "statement_B": "the cup that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the cup that comes back is the same one as before",
+      "statement_B": "the cup that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
@@ -28611,7 +28632,8 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance",
+          "A2b: ReID statement positions swapped to balance answer positions"
         ]
       }
     },
@@ -29489,7 +29511,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -29762,7 +29784,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -30015,7 +30037,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -30816,7 +30838,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -30835,7 +30857,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -30856,7 +30878,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -30893,7 +30915,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -31304,7 +31326,7 @@
         "hallucination": "variant_b",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194B swap"
+          "A4: MCQ_4 A↔B swap"
         ]
       }
     },
@@ -31323,7 +31345,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -31822,7 +31844,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -32534,7 +32556,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -33745,7 +33767,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -34101,7 +34123,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -34194,7 +34216,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -34303,7 +34325,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -34496,7 +34518,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -34746,7 +34768,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -34785,7 +34807,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -35162,7 +35184,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -35377,7 +35399,7 @@
         "hallucination": "variant_a",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -35612,7 +35634,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -35883,7 +35905,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -35962,15 +35984,18 @@
       "video_id": "perception_test_video_8890",
       "format": "sp",
       "question": "After the gray cup comes back into view, is it the same cup as before, or a different one?",
-      "statement_A": "the cup that comes back is a different one",
-      "statement_B": "the cup that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the cup that comes back is the same one as before",
+      "statement_B": "the cup that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "gray cup",
         "hallucination": null,
-        "has_hallucination_distractor": false
+        "has_hallucination_distractor": false,
+        "repair_log": [
+          "A2b: ReID statement positions swapped to balance answer positions"
+        ]
       }
     },
     {
@@ -36043,7 +36068,7 @@
         "hallucination": "variant_a",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -36136,7 +36161,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -36283,7 +36308,7 @@
         "hallucination": "variant_a",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -36408,7 +36433,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -36463,7 +36488,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -36518,7 +36543,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -36833,7 +36858,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194B swap"
+          "A4: MCQ_4 A↔B swap"
         ]
       }
     },
@@ -36906,7 +36931,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -36963,7 +36988,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -37000,7 +37025,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -37339,7 +37364,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -37574,7 +37599,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -37933,7 +37958,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -38128,7 +38153,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -38341,7 +38366,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -38430,7 +38455,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -38895,7 +38920,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -39134,7 +39159,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -39377,7 +39402,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -40676,7 +40701,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -40983,7 +41008,7 @@
         "hallucination": "variant_b",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A1: lowercased 'd' \u2192 'D'"
+          "A1: lowercased 'd' → 'D'"
         ]
       }
     },
@@ -41038,7 +41063,7 @@
         "hallucination": "variant_b",
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -41165,7 +41190,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -41348,7 +41373,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -41385,7 +41410,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -42037,7 +42062,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A2: SP A\u2194B flipped to balance"
+          "A2: SP A↔B flipped to balance"
         ]
       }
     },
@@ -42252,7 +42277,7 @@
         "hallucination": null,
         "has_hallucination_distractor": false,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -42939,7 +42964,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194D swap"
+          "A4: MCQ_4 A↔D swap"
         ]
       }
     },
@@ -42978,7 +43003,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194C swap"
+          "A4: MCQ_4 A↔C swap"
         ]
       }
     },
@@ -43069,7 +43094,7 @@
         "hallucination": null,
         "has_hallucination_distractor": true,
         "repair_log": [
-          "A4: MCQ_4 A\u2194B swap"
+          "A4: MCQ_4 A↔B swap"
         ]
       }
     },
@@ -43374,6 +43399,16 @@
       "B": 338,
       "A": 339
     },
-    "seed": 42
+    "seed": 42,
+    "a2b_reid_statement_swaps": 9,
+    "a2b_reid_after": {
+      "A": 11,
+      "B": 12
+    },
+    "a2b_note": "Statement-position-only swaps; QA semantics are unchanged.",
+    "final_sp_answer_positions": {
+      "A": 291,
+      "B": 272
+    }
   }
 }
