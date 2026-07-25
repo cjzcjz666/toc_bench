@@ -1,6 +1,6 @@
 {
   "benchmark": "TOC-Bench",
-  "version": "merged-answer+repaired+reid-balanced",
+  "version": "merged-answer+repaired+reid-semantic-balanced",
   "subset": "answer",
   "total_items": 2323,
   "format_counts": {
@@ -90,18 +90,17 @@
       "video_id": "charades_JFU3J",
       "format": "sp",
       "question": "After the red cap comes back into view, is it the same cap as before, or a different one?",
-      "statement_A": "the cap that comes back is a different one",
-      "statement_B": "the cap that comes back is the same one as before",
+      "statement_A": "the cap that comes back is the same one as before",
+      "statement_B": "the cap that comes back is a different one",
       "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "red cap",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2: SP A↔B flipped to balance"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -465,6 +464,8 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "silver spoon",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -727,13 +728,15 @@
       "video_id": "charades_U5KRD",
       "format": "sp",
       "question": "After the plastic storage bin comes back into view, is it the same bin as before, or a different one?",
-      "statement_A": "the bin that comes back is a different one",
-      "statement_B": "the bin that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the bin that comes back is the same one as before",
+      "statement_B": "the bin that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "plastic storage bin",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -1330,13 +1333,15 @@
       "video_id": "perception_test_video_9763",
       "format": "sp",
       "question": "After the yellow sock comes back into view, is it the same sock as before, or a different one?",
-      "statement_A": "the sock that comes back is a different one",
-      "statement_B": "the sock that comes back is the same one as before",
+      "statement_A": "the sock that comes back is the same one as before",
+      "statement_B": "the sock that comes back is a different one",
       "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "yellow sock",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -1678,11 +1683,13 @@
       "question": "After the red book comes back into view, is it the same book as before, or a different one?",
       "statement_A": "the book that comes back is a different one",
       "statement_B": "the book that comes back is the same one as before",
-      "correct_answer": "B",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "red book",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -2021,13 +2028,15 @@
       "video_id": "perception_test_video_5866",
       "format": "sp",
       "question": "After the white cap comes back into view, is it the same cap as before, or a different one?",
-      "statement_A": "the cap that comes back is a different one",
-      "statement_B": "the cap that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the cap that comes back is the same one as before",
+      "statement_B": "the cap that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "white cap",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -2871,6 +2880,8 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "yellow plastic bag",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -2912,18 +2923,17 @@
       "video_id": "perception_test_video_3956",
       "format": "sp",
       "question": "After the blue bowl comes back into view, is it the same bowl as before, or a different one?",
-      "statement_A": "the bowl that comes back is a different one",
-      "statement_B": "the bowl that comes back is the same one as before",
+      "statement_A": "the bowl that comes back is the same one as before",
+      "statement_B": "the bowl that comes back is a different one",
       "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "blue bowl",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2: SP A↔B flipped to balance"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -3661,16 +3671,15 @@
       "question": "After the plastic chair comes back into view, is it the same chair as before, or a different one?",
       "statement_A": "the chair that comes back is the same one as before",
       "statement_B": "the chair that comes back is a different one",
-      "correct_answer": "A",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "plastic chair",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -3749,6 +3758,8 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "black pot",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -10974,18 +10985,17 @@
       "video_id": "perception_test_video_7414",
       "format": "sp",
       "question": "After brown medicine bottle comes back into view, is it the same bottle as before, or a different one?",
-      "statement_A": "the bottle that comes back is the same one as before",
-      "statement_B": "the bottle that comes back is a different one",
+      "statement_A": "the bottle that comes back is a different one",
+      "statement_B": "the bottle that comes back is the same one as before",
       "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "brown medicine bottle",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -11780,11 +11790,13 @@
       "question": "After the man in the striped shirt comes back into view, is it the same shirt as before, or a different one?",
       "statement_A": "the shirt that comes back is a different one",
       "statement_B": "the shirt that comes back is the same one as before",
-      "correct_answer": "B",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "man in striped shirt",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -12732,18 +12744,17 @@
       "video_id": "charades_W4W97",
       "format": "sp",
       "question": "After the green cup comes back into view, is it the same cup as before, or a different one?",
-      "statement_A": "the cup that comes back is the same one as before",
-      "statement_B": "the cup that comes back is a different one",
-      "correct_answer": "A",
+      "statement_A": "the cup that comes back is a different one",
+      "statement_B": "the cup that comes back is the same one as before",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "green cup",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -13258,11 +13269,10 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "open cabinet door",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -16720,11 +16730,10 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "black jacket",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -17690,6 +17699,8 @@
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "clear plastic cup",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -17950,13 +17961,15 @@
       "video_id": "perception_test_video_7490",
       "format": "sp",
       "question": "After the blue and white pen comes back into view, is it the same pen as before, or a different one?",
-      "statement_A": "the pen that comes back is a different one",
-      "statement_B": "the pen that comes back is the same one as before",
-      "correct_answer": "B",
+      "statement_A": "the pen that comes back is the same one as before",
+      "statement_B": "the pen that comes back is a different one",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "blue and white pen",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -24417,13 +24430,15 @@
       "video_id": "perception_test_video_2507",
       "format": "sp",
       "question": "After the gold bracelet comes back into view, is it the same bracelet as before, or a different one?",
-      "statement_A": "the bracelet that comes back is the same one as before",
-      "statement_B": "the bracelet that comes back is a different one",
-      "correct_answer": "A",
+      "statement_A": "the bracelet that comes back is a different one",
+      "statement_B": "the bracelet that comes back is the same one as before",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "gold bracelet",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -27327,18 +27342,17 @@
       "video_id": "charades_TW2F4",
       "format": "sp",
       "question": "After black jacket comes back into view, is it the same jacket as before, or a different one?",
-      "statement_A": "the jacket that comes back is the same one as before",
-      "statement_B": "the jacket that comes back is a different one",
+      "statement_A": "the jacket that comes back is a different one",
+      "statement_B": "the jacket that comes back is the same one as before",
       "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "black jacket",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -27994,18 +28008,17 @@
       "video_id": "perception_test_video_9369",
       "format": "sp",
       "question": "After the red lid comes back into view, is it the same lid as before, or a different one?",
-      "statement_A": "the lid that comes back is the same one as before",
-      "statement_B": "the lid that comes back is a different one",
-      "correct_answer": "A",
+      "statement_A": "the lid that comes back is a different one",
+      "statement_B": "the lid that comes back is the same one as before",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "red lid",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -28624,17 +28637,15 @@
       "question": "After the red cup comes back into view, is it the same cup as before, or a different one?",
       "statement_A": "the cup that comes back is the same one as before",
       "statement_B": "the cup that comes back is a different one",
-      "correct_answer": "A",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "red cup",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2: SP A↔B flipped to balance",
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -32140,11 +32151,13 @@
       "question": "After white hoodie comes back into view, is it the same hoodie as before, or a different one?",
       "statement_A": "the hoodie that comes back is a different one",
       "statement_B": "the hoodie that comes back is the same one as before",
-      "correct_answer": "B",
+      "correct_answer": "A",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "white hoodie",
+        "semantic_ground_truth": "different",
+        "ground_truth_is_real": false,
         "hallucination": null,
         "has_hallucination_distractor": false
       }
@@ -35984,18 +35997,17 @@
       "video_id": "perception_test_video_8890",
       "format": "sp",
       "question": "After the gray cup comes back into view, is it the same cup as before, or a different one?",
-      "statement_A": "the cup that comes back is the same one as before",
-      "statement_B": "the cup that comes back is a different one",
-      "correct_answer": "A",
+      "statement_A": "the cup that comes back is a different one",
+      "statement_B": "the cup that comes back is the same one as before",
+      "correct_answer": "B",
       "metadata": {
         "dim": "reappear_identity",
         "tier": "tier2",
         "subject_label": "gray cup",
+        "semantic_ground_truth": "same",
+        "ground_truth_is_real": true,
         "hallucination": null,
-        "has_hallucination_distractor": false,
-        "repair_log": [
-          "A2b: ReID statement positions swapped to balance answer positions"
-        ]
+        "has_hallucination_distractor": false
       }
     },
     {
@@ -43400,15 +43412,20 @@
       "A": 339
     },
     "seed": 42,
-    "a2b_reid_statement_swaps": 9,
-    "a2b_reid_after": {
-      "A": 11,
-      "B": 12
-    },
-    "a2b_note": "Statement-position-only swaps; QA semantics are unchanged.",
     "final_sp_answer_positions": {
       "A": 291,
       "B": 272
+    },
+    "reid_semantic_audit": {
+      "items": 23,
+      "semantic_labels": {
+        "same": 13,
+        "different": 10
+      },
+      "answer_positions": {
+        "A": 11,
+        "B": 12
+      }
     }
   }
 }
