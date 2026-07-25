@@ -16,8 +16,6 @@ All concrete filesystem locations below are written as **placeholders**; substit
 | `answer_extractor.py` | Deterministic post-processing: maps free-form model text to structured answers per format. |
 | `compute_metrics.py` | Aggregates accuracy, tier-weighted metrics, hallucination-related breakdowns, and **invalid extraction rate**. |
 | `data_repair.py` | Small, auditable fixes applied to an exported clean benchmark before scoring (produces a versioned JSON used by `eval_runner.py`). |
-| `analysis/bootstrap_ci/` | Complete per-cell sample sizes and QA-item bootstrap confidence intervals for the reported model results. |
-| `third_party_licenses/CHARADES_LICENSE.txt` | Original Charades license notice retained with the artifact. |
 
 Auxiliary scripts under `scripts/` (e.g., diagnostics, duplicate-label repair, referring-expression helpers) support QA quality control and analysis; they are optional for the main linear pipeline.
 
@@ -225,10 +223,6 @@ python compute_metrics.py \
 
 Metrics include overall accuracy, macro-by-dimension, tier-weighted accuracy, hallucination-bucket accuracies, and **invalid extraction rate** (`extracted_answer is None` among scored items).
 
-### 6.4 Bootstrap confidence intervals
-
-The `analysis/bootstrap_ci/` directory reports two-sided 95% percentile intervals from 20,000 QA-item bootstrap resamples with fixed seed 20260724. It contains complete results for all 23 evaluated models across all 10 released dimensions and five serialization labels, plus overall and paired model-difference tables. Use the paired table for direct model comparisons rather than treating marginal-CI overlap as a significance test.
-
 ---
 
 ## 7. Reproducibility checklist
@@ -237,15 +231,3 @@ The `analysis/bootstrap_ci/` directory reports two-sided 95% percentile interval
 2. Pin **package versions** (transformers / vLLM / segmenter) when reporting numbers; several model-specific loaders are sensitive to minor version skew.
 3. Record **seeds** passed to stochastic stages (`step4b_sample_for_verification.py`, `data_repair.py`, and any LLM-based realization).
 4. Archive **exact** `<REPAIRED_BENCHMARK_JSON>` and model prediction JSONLs alongside submitted results.
-
----
-
-## 8. Citation
-
-If you use this benchmark or codebase, please cite the **TOC-Bench** paper (bib entry to be added upon publication). Until then, cite the repository URL and commit hash used in your experiments.
-
----
-
-## 9. License & third-party data
-
-Individual sources in `DATA_SOURCES` carry their own licenses and access procedures. In particular, the official Charades license permits general use by academic, non-profit, and government-sponsored researchers and permits evaluation use; commercial use requires separate permission from the Allen Institute for AI. Third-party media remains governed by its original source terms and is not relicensed by this code repository.
